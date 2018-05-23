@@ -115,7 +115,7 @@ function endGame() {
   }
 
   clearInterval(gameInterval);
-  window.removeEventListener('keydown', moveDodger);
+  document.removeEventListener('keydown', moveDodger);
   alert("YOU LOSE!");
   START.innerHTML = 'Play again?'
   START.style.display = 'inline'
