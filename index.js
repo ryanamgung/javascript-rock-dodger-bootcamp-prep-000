@@ -130,12 +130,12 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
-  if (e.key === LEFT_ARROW) {
+  if (e.which === LEFT_ARROW) {
     e.stopPropagation();
     e.preventDefault();
     moveDodgerLeft();
   }
-  else if(e.key === RIGHT_ARROW){
+  else if(e.which === RIGHT_ARROW){
     e.stopPropagation();
     e.preventDefault();
     moveDodgerRight();
