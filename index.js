@@ -51,7 +51,7 @@ function createRock(x) {
   // Hmmm, why would we have used `var` here?
   var top = 0
 
-  rock.style.top = top
+  rock.style.top = '${top}px'
   GAME.appendChild(rock);
 
   /**
@@ -74,7 +74,7 @@ function createRock(x) {
     else if (top < GAME_HEIGHT - 20)
     {
       top+=4;
-      rock.style.top = top
+      rock.style.top = '${top}px'
       window.requestAnimationFrame(moveRock);
     }
     else if (top >= GAME_HEIGHT-20)
@@ -103,8 +103,8 @@ function createRock(x) {
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
   moveRock();
-  ROCKS.push(rock)
 
+  ROCKS.push(rock);
   // Finally, return the rock element you've created
   return rock
 }
