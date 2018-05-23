@@ -21,7 +21,7 @@ function checkCollision(rock) {
   // implement me!
   // use the comments below to guide you!
   const top = positionToInteger(rock.style.top)
- 
+
   // rocks are 20px high
   // DODGER is 20px high
   // GAME_HEIGHT - 20 - 20 = 360px;
@@ -48,6 +48,7 @@ function createRock(x) {
   var top = 0
 
   rock.style.top = top
+  GAME.appendChild(rock);
 
   /**
    * Now that we have a rock, we'll need to append
