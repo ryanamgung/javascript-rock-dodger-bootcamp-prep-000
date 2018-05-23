@@ -68,7 +68,7 @@ function createRock(x) {
     }
     else if (top < GAME_HEIGHT-20) {
       top+=4;
-      rock.style.top = `${top}px`
+      rock.style.top = top
       window.requestAnimationFrame(moveRock);
     }
     else if (top >= GAME_HEIGHT-20) {
