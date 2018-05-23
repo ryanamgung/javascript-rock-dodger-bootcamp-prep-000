@@ -71,13 +71,13 @@ function createRock(x) {
     {
       endGame();
     }
-    else if (top < GAME_HEIGHT - 20 && top > 0)
+    else if (top < GAME_HEIGHT - 20)
     {
-      top -= 2;
+      top+=4;
       rock.style.top = '${top}px'
       window.requestAnimationFrame(moveRock);
     }
-    else
+    else if (top >= GAME_HEIGHT-20)
     {
       GAME.removeChild(rock);
       ROCKS.pop();
