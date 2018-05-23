@@ -31,12 +31,16 @@ function checkCollision(rock) {
     const rockLeftEdge = positionToInteger(rock.style.left)
     const rockRightEdge = rockLeftEdge + 20;
 
-    return (
-      (rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) ||
+    if((rockLeftEdge <= dodgerLeftEdge && rockRightEdge >= dodgerLeftEdge) ||
       (rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge) ||
       (rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge))
+      {
+        return true;
+      }else{
+        return false;
+      }
     }
-}
+  }
 
 function createRock(x) {
   const rock = document.createElement('div')
@@ -47,7 +51,7 @@ function createRock(x) {
   // Hmmm, why would we have used `var` here?
   var top = 0
 
-  rock.style.top = '${top}px'
+  rock.style.top = top
   GAME.appendChild(rock);
 
   /**
@@ -98,8 +102,6 @@ function createRock(x) {
 
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
-  moveRock();
-
   ROCKS.push(rock);
   // Finally, return the rock element you've created
   return rock
