@@ -63,15 +63,18 @@ function createRock(x) {
   function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
-    if(checkCollision(rock)===true){
+    if(checkCollision(rock) === true)
+    {
       endGame();
     }
-    else if (top < GAME_HEIGHT-20) {
+    else if (top < GAME_HEIGHT - 20)
+    {
       top+=4;
       rock.style.top = top
       window.requestAnimationFrame(moveRock);
     }
-    else if (top >= GAME_HEIGHT-20) {
+    else if (top >= GAME_HEIGHT-20)
+    {
       GAME.removeChild(rock);
       ROCKS.shift();
     }
@@ -111,7 +114,7 @@ function createRock(x) {
 function endGame() {
   while(ROCKS.length > 0){
     GAME.removeChild(ROCKS[0]);
-    ROCKS.shift();
+    ROCKS.pop();
   }
 
   window.removeEventListener('keydown', moveDodger);
