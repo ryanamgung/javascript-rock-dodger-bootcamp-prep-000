@@ -115,7 +115,7 @@ function endGame() {
   }
 
   window.removeEventListener('keydown', moveDodger);
-  endGame.clearInterval(gameInterval);
+  GAME.clearInterval(gameInterval);
   window.alert("YOU LOSE!");
 }
 
