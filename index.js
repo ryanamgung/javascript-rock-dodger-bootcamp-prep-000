@@ -117,8 +117,6 @@ function endGame() {
   window.removeEventListener('keydown', moveDodger);
   clearInterval(gameInterval);
   window.alert("YOU LOSE!");
-  START.innerHTML = 'Play again?'
-  START.style.display = 'online'
 }
 
 function moveDodger(e) {
