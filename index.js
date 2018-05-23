@@ -50,7 +50,8 @@ function createRock(x) {
 
   // Hmmm, why would we have used `var` here?
   var top = 0;
-  rock.style.top = top
+  rock.style.top = '${top}'
+  GAME.appendChild(rock)
 
   /**
    * Now that we have a rock, we'll need to append
@@ -63,22 +64,7 @@ function createRock(x) {
    * seems like a good pace.)
    */
   function moveRock() {
-    // implement me!
-    // (use the comments below to guide you!)
-    top += 2;
-    rock.style.top = '${top}px';
-    if(checkCollision(rock)){
-      endGame();
-    }
-
-    if(GAME.contains(rock)){
-      if(top >= GAME_HEIGHT){
-        rock.remove();
-      }else{
-        window.requestAnimationFrame(moveRock);
-      }
-    }
-
+    // (use the comments below to guide you!
     /**
      * If a rock collides with the DODGER,
      * we should call endGame()
@@ -93,6 +79,21 @@ function createRock(x) {
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
      */
+     function mov() {
+       rock.style.top = '${top += 2}px'
+     }
+       if(checkCollision(rock)){
+         endGame();
+       }
+     }
+     if(top < GAME_HEIGHT - 20){
+       window.requestAnimationFrame(mov)
+     }
+
+     if(top === 380){
+       GAME.removeChild(rock)
+     }
+     window.requestAnimationFrame(mov)
   }
 
   // We should kick of the animation of the rock around here
