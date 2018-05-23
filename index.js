@@ -49,10 +49,8 @@ function createRock(x) {
   rock.style.left = `${x}px`
 
   // Hmmm, why would we have used `var` here?
-  var top = 0
-
+  var top = 0;
   rock.style.top = top
-  GAME.appendChild(rock);
 
   /**
    * Now that we have a rock, we'll need to append
