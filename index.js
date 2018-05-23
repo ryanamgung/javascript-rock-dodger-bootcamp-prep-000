@@ -114,8 +114,8 @@ function endGame() {
     ROCKS.shift();
   }
 
-  clearInterval(gameInterval);
   window.removeEventListener('keydown', moveDodger);
+  clearInterval(gameInterval);
   window.alert("YOU LOSE!");
   START.innerHTML = 'Play again?'
   START.style.display = 'inline'
