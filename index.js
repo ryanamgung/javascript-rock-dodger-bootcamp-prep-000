@@ -67,21 +67,20 @@ function createRock(x) {
   function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
-    if(checkCollision(rock) === true)
-    {
+    top += 2;
+    rock.style.top = '${top}px';
+    if(checkCollision(rock)){
       endGame();
     }
-    else if (top < GAME_HEIGHT - 20)
-    {
-      top+=4;
-      rock.style.top = '${top}px'
-      window.requestAnimationFrame(moveRock);
+
+    if(GAME.contains(rock)){
+      if(top >= GAME_HEIGHT){
+        rock.remove();
+      }else{
+        window.requestAnimationFrame(moveRock);
+      }
     }
-    else if (top >= GAME_HEIGHT-20)
-    {
-      GAME.removeChild(rock);
-      ROCKS.pop();
-    }
+
     /**
      * If a rock collides with the DODGER,
      * we should call endGame()
@@ -102,7 +101,6 @@ function createRock(x) {
 
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
-  moveRock();
   ROCKS.push(rock);
   // Finally, return the rock element you've created
   return rock
