@@ -76,7 +76,7 @@ function createRock(x) {
     else if (top >= GAME_HEIGHT-20)
     {
       GAME.removeChild(rock);
-      ROCKS.shift();
+      ROCKS.pop();
     }
     /**
      * If a rock collides with the DODGER,
